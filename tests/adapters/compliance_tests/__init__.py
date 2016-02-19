@@ -15,8 +15,10 @@
 
 from unittest import SkipTest
 
+from tests.adapters.compliance_tests.get_interface_test import GetInterfaceTest
 from tests.adapters.compliance_tests.get_interfaces_test import GetInterfacesTest
 from tests.adapters.compliance_tests.add_vlan_test import AddVlanTest
+from tests.adapters.compliance_tests.get_vlan_interfaces_test import GetVlanInterfacesTest
 from tests.adapters.compliance_tests.get_vlan_test import GetVlanTest
 from tests.adapters.compliance_tests.set_vlan_icmp_redirects_state_test import SetVlanIcmpRedirectsStateTest
 from tests.adapters.model_list import available_models
@@ -25,6 +27,7 @@ _test_classes = [
     GetVlanTest,
     AddVlanTest,
     GetInterfacesTest,
+    GetInterfaceTest,
     SetVlanIcmpRedirectsStateTest
 ]
 
