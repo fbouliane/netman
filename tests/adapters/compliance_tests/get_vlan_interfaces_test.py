@@ -18,10 +18,10 @@ from netaddr import IPNetwork, IPAddress
 from netman.core.objects.access_groups import IN, OUT
 from netman.core.objects.exceptions import UnknownVlan
 from netman.core.objects.interface_states import ON
-from tests.adapters.configured_test_case import ConfiguredTestCase
+from tests.adapters.compliance_test_case import ComplianceTestCase
 
 
-class GetVlanInterfacesTest(ConfiguredTestCase):
+class GetVlanInterfacesTest(ComplianceTestCase):
     _dev_sample = "cisco"
 
     def setUp(self):

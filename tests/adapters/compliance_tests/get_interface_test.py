@@ -16,11 +16,10 @@ from hamcrest import assert_that, is_
 
 from netman.core.objects.exceptions import UnknownInterface
 from netman.core.objects.interface_states import ON
-from tests.adapters.configured_test_case import ConfiguredTestCase
+from tests.adapters.compliance_test_case import ComplianceTestCase
 
-
-class GetInterfaceTest(ConfiguredTestCase):
-    _dev_sample = "juniper"
+class GetInterfaceTest(ComplianceTestCase):
+    _dev_sample = "brocade"
 
     def setUp(self):
         super(GetInterfaceTest, self).setUp()
@@ -33,7 +32,7 @@ class GetInterfaceTest(ConfiguredTestCase):
         self.client.add_vlan(1000, name="vlan1000")
         self.client.add_vlan(2000, name="vlan2000")
         expected = self.test_ports[0]
-
+        print(self.switch_descriptor.model)
         self.try_to.set_access_vlan(expected.name, 1000)
         self.try_to.set_trunk_mode(expected.name)
         self.try_to.set_interface_state(expected.name, ON)
